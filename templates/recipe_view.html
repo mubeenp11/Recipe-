@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{%block title%}Recipe-{{request.user}} View{%endblock%}
+{% block extra_head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'style/recipe_view.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <h1>{{request.user }}  Recipes</h1>
+    <div class="table-responsive">
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Picture</th>
+                <th>Date</th>
+                <th>Action</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            {% for recipe in view %}
+                <tr>
+                    <td>{{ recipe.title }}</td>
+                    <td>{{ recipe.description }}</td>
+                    <td>
+                        {% if recipe.image %}
+                            <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" class="recipe-img">
+                        {% else %}
+                            No Image
+                        {% endif %}
+                    </td>
+                    <td>{{ recipe.date }}</td>
+                    <td><a href="{% url 'get_recipe2' recipe.pk %}" class="btn-primary">See More</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
+

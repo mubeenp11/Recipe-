@@ -1,0 +1,30 @@
+
+{% extends "base.html" %}
+{% block extra_head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'style/getrec.css' %}">
+
+{% endblock %}
+{% block content %}
+
+
+<div class="container animated-container">
+    <h2 class="animated-text">{{ recipe.title }}</h2>
+    <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" class="recipe-img animated-img">
+    <p class="animated-text">{{ recipe.description }}</p>
+    <p class="animated-text">Posted by: {{ recipe.user.username }}</p>
+    <p class="animated-text">Posted on: {{ recipe.date }}</p>
+    <p class="animated-text">Views: {{ recipe.view }}</p>
+</div>
+
+     <div class="feedback-container">
+        <h2>Feedback</h2>
+        {% for feedbacks in feedback %}
+        <div class="feedback-item">
+            <p><strong>{{ feedbacks.user.username }}:</strong> {{ feedbacks.feedback }}</p>
+            <p><small>Posted on: {{ feedbacks.date }}</small></p>
+        </div>
+        {% endfor %}
+   
+    </div>
+    {%endblock%}

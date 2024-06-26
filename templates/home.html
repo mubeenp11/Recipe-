@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{%block title%}Recipe-Home{%endblock%}
+{% block extra_head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'style/home.css' %}">
+{% endblock %}
+{% block content %}
+<header>
+    <h1>Welcome to Our Recipe Application</h1>
+    <p>Your ultimate destination for delicious recipes</p>
+</header>
+<main>
+    <section id="introduction">
+        <h2>About Our Application</h2>
+        <p>
+            Discover, share, and create amazing recipes. Our application allows you to add your own recipes, browse through a collection of delicious dishes, and manage your culinary creations with ease.
+        </p>
+        <img src="{% static 'recipes/delecious_recipe.jpg' %}" alt="Delicious Recipe" class="intro-image">
+    </section>
+    <section id="features">
+        <h2>Features</h2>
+        <div class="feature">
+            <img src="{% static 'recipes/add_recipe.jpg' %}" alt="Add Recipe">
+            <h3>Add Recipes</h3>
+            <p>Share your unique recipes with the world.</p>
+        </div>
+        <div class="feature">
+            <img src="{% static 'recipes/view_recipe.jpg' %}" alt="View Recipes">
+            <h3>View Recipes</h3>
+            <p>Browse a wide variety of recipes from different cuisines.</p>
+        </div>
+        <div class="feature">
+            <img src="{% static 'recipes/manage_recipe.jpg' %}" alt="Manage Recipes">
+            <h3>Manage Recipes</h3>
+            <p>Edit and organize your recipes effortlessly.</p>
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,32 @@
+
+{% extends "base.html" %}
+{% block extra_head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'style/getrec.css' %}">
+
+{% endblock %}
+{% block content %}
+<!-- recipe_detail.html -->
+
+<div class="container animated-container">
+    <h2 class="animated-text">{{ recipe.title }}</h2>
+    <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" class="recipe-img animated-img">
+    <p class="animated-text">{{ recipe.description }}</p>
+    <p class="animated-text">Posted by: {{ recipe.user.username }}</p>
+    <p class="animated-text">Posted on: {{ recipe.date }}</p>
+    <p class="animated-text">Views: {{ recipe.view }}</p>
+{% comment %}     
+    <p class="animated-text">Feedback: {{ recipe.view }}</p> {% endcomment %}
+    <a href="{% url 'like_recipe' recipe.pk %}" class="like-btn">
+        <i class="{% if request.user in recipe.likes.all %}fas{% else %}far{% endif %} fa-heart"></i></a>
+    <a href="{% url 'all_recipe_view'  %}" class="btn-primary">Back</a>
+    <div class="feedback-form-container">
+        <form method="post" class="feedback-form">
+            {% csrf_token %}
+            <input type="text" name="feedback" placeholder="Feedback" {% if existing_feedback %}disabled{% endif %}>
+            <input type="submit" value="Submit" {% if existing_feedback %}disabled{% endif %}>
+        </form>
+    </div>
+    
+
+{%endblock%}

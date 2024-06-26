@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{%block title%}Recipe-Notification{%endblock%}
+{% block extra_head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'style/getrec.css' %}">
+
+{% endblock %}
+{% block content %}
+<body>
+
+        
+    <div class="feedback-container">
+        <h2>Notifications</h2>
+        {% for notifications in notification %}
+        <div class="feedback-item">
+            <img src="{{ notifications.recipe.image.url }}" alt="{{ notifications.user.username }}" class="feedback-img">
+            <p><strong>{{ notifications.message }}</strong></p>
+            <p><small>{{ notifications.created_at|timesince}} ago</small></p>
+        </div>
+        {% endfor %}
+   
+    </div>
+</body>
+{%endblock%}

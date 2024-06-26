@@ -1,0 +1,63 @@
+/* static/style/notification.css */
+
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.notifications-list {
+    list-style-type: none;
+}
+
+.notification-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    background-color: #fafafa;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.notification-content p {
+    margin: 0;
+    color: #555;
+}
+
+.notification-content .time {
+    color: #999;
+    font-size: 0.8em;
+}
+
+/* Hover effect for notifications */
+.notification-content:hover {
+    background-color: #f0f8ff; /* Light blue */
+    transition: background-color 0.3s ease;
+}

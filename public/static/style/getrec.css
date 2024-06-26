@@ -1,0 +1,230 @@
+/* Global container styles */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    overflow: hidden; /* Ensure content fits within rounded corners */
+}
+.container h2 {
+    color: #fff; /* White text for better contrast */
+    border: 2px solid #0072ff; /* Blue border */
+    background-color: #0072ff; /* Primary blue background */
+    background: linear-gradient(135deg, #0072ff 0%, #005bb5 100%); /* Gradient for a nicer effect */
+    border-radius: 10px;
+    padding: 10px 20px; 
+    text-align: center; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    font-size: 24px; 
+    font-weight: bold; 
+    margin-bottom: 20px; 
+    transition: all 0.3s ease; 
+}
+
+.container h2:hover {
+    background: linear-gradient(135deg, #005bb5 0%, #003f7f 100%); /* Darker gradient on hover */
+    border-color: #005bb5; /* Darker border on hover */
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animated container */
+.animated-container {
+    animation: fadeIn 1s ease-out;
+}
+
+/* Animated text */
+.animated-text {
+    animation: fadeIn 1s ease-out;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+    opacity: 0; /* Initially hidden */
+}
+
+/* Animated image */
+.animated-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    animation: zoomIn 1s ease-out;
+    animation-delay: 0.4s;
+    animation-fill-mode: forwards;
+    opacity: 0; /* Initially hidden */
+}
+
+.animated-container > h2:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.animated-container > img:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.animated-container > p:nth-child(n+3) {
+    animation-delay: 0.3s;
+}
+
+
+
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: red;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: lightcoral;
+}
+.like-btn {
+    color: #ff0000; /* Red color for the heart */
+    font-size: 1.5em;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em; /* Width and height to create a square button */
+    height: 2em;
+    border-radius: 50%; /* Make it a circle */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.like-btn:hover {
+    background-color: #ff4d4d; /* Lighter red when hovered */
+}
+
+/* Basic styling for the form */
+.feedback-form-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-form input[type="text"],
+.feedback-form input[type="submit"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.feedback-form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.feedback-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Animation for disabled state */
+.feedback-form input[type="text"][disabled],
+.feedback-form input[type="submit"][disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    filter: grayscale(50%);
+    transition: opacity 0.3s ease;
+}
+
+.feedback-form input[type="text"][disabled]:hover,
+.feedback-form input[type="submit"][disabled]:hover {
+    opacity: 0.6;
+}
+
+/* Animation for disabled state */
+.feedback-form input[type="text"][disabled],
+.feedback-form input[type="submit"][disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    filter: grayscale(50%);
+    transition: opacity 0.3s ease;
+}
+
+.feedback-form input[type="text"][disabled]:hover,
+.feedback-form input[type="submit"][disabled]:hover {
+    opacity: 0.6;
+}
+.feedback-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feedback-item:hover {
+    transform: translateY(-5px);
+}
+
+.feedback-item p {
+    margin: 0;
+}
+
+.feedback-item small {
+    color: #666;
+}
+.feedback-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}

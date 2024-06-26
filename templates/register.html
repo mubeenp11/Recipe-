@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{%block title%}Recipe-Register{%endblock%}
+{% block extra_head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'style/reg.css' %}">
+
+{% endblock %}
+{% block content %}
+<body>
+    <div class="container">
+        <div class="register-box">
+            <h2>Register</h2>
+           {% include "alet.html"%}
+            <form method="post">
+                {% csrf_token %}
+                <div class="textbox">
+                    <input type="text" name="username" required>
+                    <span>Username</span>
+                </div>
+                <div class="textbox">
+                    <input type="email" name="email" required>
+                    <span>Email</span>
+                </div>
+                <div class="textbox">
+                    <input type="password" name="password" required>
+                    <span>Password</span>
+                </div>
+                <div class="textbox">
+                    <input type="password" name="confirm_password" required>
+                    <span>Confirm Password</span>
+                </div>
+                <button type="submit" class="btn">Register</button>
+              
+            </form>
+        </div>
+    </div>
+</body>
+{%endblock%}

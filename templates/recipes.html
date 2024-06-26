@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{%block title%}Recipe-Form{%endblock%}
+{% block extra_head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'style/recipes.css' %}">
+
+{% endblock %}
+{% block content %}
+{%include "alet.html" %}
+<div class="welcome-box">
+    <h2>Welcome, {{ request.user }}!</h2>
+</div>
+
+<!-- Recipe Form -->
+<div class="form-container">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="text" name="title" placeholder="Recipe Title" required>
+        </div>
+        <div class="form-group">
+            <textarea name="description" placeholder="Description" required></textarea>
+        </div>
+        <div class="form-group">
+            <input type="file" name="image"  required>
+        </div>
+        <div class="form-group">
+            <input type="text" name="date" value="{{ current_date }}" readonly>
+        </div>
+        <button type="submit" class="btn">Submit Recipe</button>
+    </form>
+</div>
+{%endblock%}
